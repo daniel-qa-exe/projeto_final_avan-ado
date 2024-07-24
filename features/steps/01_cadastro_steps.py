@@ -10,12 +10,14 @@ def step_click_cadastre_se(context):
     assert "Joga Junto" in browser_title, "titulo nao encontrado"
     btn_cadastre_se = context.browser.find_element(By.XPATH,"/html/body/div/main/form/div[6]/span[2]/a")
     btn_cadastre_se.click()
+    time.sleep(2)
 
 @when(u'o usuário preencher os campos com as credenciais')
 def step_fill_cadastro(context):
     context.browser.find_element(By.NAME, "email").send_keys(context.email)
     context.browser.find_element(By.NAME,"password").send_keys(context.password)
     context.browser.find_element(By.NAME,"confirmPassword").send_keys(context.password)
+    time.sleep(2)
 
 @when(u'clicar no botão "criar conta"')
 def step_submit_cadastro(context):
